@@ -17,7 +17,7 @@ CONFIG_ENV_ONLY=${CONFIG_ENV_ONLY:=false}
 # Function to get Linux distribution
 get_distro() {
     DISTRO=$(egrep '^(ID)=' /etc/os-release| sed 's/"//g' | cut -f2 -d"=")
-    if [[ $DISTRO != @(rhel|fedora|centos|ubuntu) ]]
+    if [[ $DISTRO != @(rhel|fedora|centos|ubuntu|almalinux) ]]
     then
       echo "This Linux distro is not supported by the install script"
       exit 1
